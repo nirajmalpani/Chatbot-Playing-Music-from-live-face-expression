@@ -1,0 +1,89 @@
+
+version: "2.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - user_pic
+  - user_singer
+  - user_thanks
+  - user_newsong
+  - user_oldsong
+  - user_e
+  - user_p
+  - user_r
+responses:
+  utter_greet:
+    - text: Hey! How are you?
+  utter_cheer_up:
+    - text: 'Here is something to cheer you up:'
+      image: 'https://i.imgur.com/nGF1K8f.jpg'
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_happy:
+    - text: 'Great, carry on!'
+  utter_goodbye:
+    - text: Bye
+  utter_iamabot:
+    - text: 'I am a bot, powered by Rasa.'
+  utter_options:
+  - buttons:
+    - payload: "Old Song"
+      title: "Old New version song"
+    - payload: "New Song"
+      title: "Popular Songs"
+    text: Please select your choice
+  utter_happy_greet:
+  - text: Hii I am the Musical Assistant.Hope you will enjoy my songs.
+  utter_ask_pic:
+  - text: Photo will be clicked for the emotion detection
+  utter_music_opt:
+  - buttons:
+    - payload: p
+      title: Pause
+    - payload: e
+      title: Stop
+    text: "Enter your choice"
+
+  utter_singer:
+  - buttons:
+    - payload: Amit Trivedi
+      title: Amit trivedi
+    - payload: Honey Singh
+      title: Honey Singh
+    - payload: Shreya Goshal
+      title: Shreya Goshal
+    - payload: Vishal Dadlani
+      title: Visual Dadlani
+    - payload: Neeti Mohan
+      title: Neeti Mohan
+    - payload: Aayushman Khurana
+      title: Aayushman
+    text: Please select your singer choice
+
+  utter_thanking_message:
+  - text: Great to have you. Come again to enjoy.
+
+actions:
+  - utter_greet
+  - utter_happy_greet
+  - utter_thanking_message
+  - utter_options
+  - utter_ask_pic
+  - utter_iamabot
+  - utter_goodbye
+  - utter_cheer_up
+  - utter_singer
+  - utter_did_that_help
+  - play_oldsong
+  - action_click_photo
+  - utter_music_opt
+  - music_options
+  - play_newsong
